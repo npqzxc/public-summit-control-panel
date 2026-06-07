@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "concurrently \\"node --import tsx server/main.ts\\" \\"vite\\"",
+    "dev": "concurrently npm:dev:server npm:dev:web",
+    "dev:server": "node --import tsx server/main.ts",
+    "dev:web": "vite",
     "build": "vite build",
     "start": "node --import tsx server/main.ts"
   },
